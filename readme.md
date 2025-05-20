@@ -41,13 +41,13 @@ To use my dotfiles, follow these steps:
    When experimenting with an unknown `stow` command or adding new configurations, it's important to use the `-n` flag, which performs a dry run. This way, it will only simulate the changes without applying them, allowing you to preview the changes before actually applying them. For example:
 
    ```bash
-   stow -n -vSt ~ git htop oh-my-zsh p10k
+   stow -n -vSt ~ git htop nvim 
    ```
 
    The above command will show you what changes will be made without actually creating any symbolic links. Once you are confident with the changes, you can remove the `-n` flag to apply the configurations.
 
    ```bash
-   stow -vSt ~ git htop oh-my-zsh p10k
+   stow -vSt ~ git htop nvim 
    ```
 
    The command above will create symbolic links for the specified configurations in your home directory (`~`). You can add or remove configurations as needed by modifying the list of configuration names.
