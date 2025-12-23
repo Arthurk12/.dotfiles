@@ -29,7 +29,7 @@ To use my dotfiles, follow these steps:
 
 2. **Install the Dependencies:**
 
-   Run the provided `install.sh` script to install the required dependencies, zsh, oh-my-zsh, and Powerlevel10k.
+   Run the provided `install.sh` script. 
 
    ```bash
    cd ~/.dotfiles

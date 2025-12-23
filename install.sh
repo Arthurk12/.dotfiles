@@ -1,12 +1,22 @@
 #!/bin/bash
 
-# Install dracula theme for gnome terminal
-git clone https://github.com/dracula/gnome-terminal
+TERMINAL_PROFILE_NAME="Dracula"
+
 cd gnome-terminal
-./install.sh
+# Create gnome terminal empty profile called DRACULA where the theme is applied
+chmod +x ./create_terminal_profile.sh
+./create_terminal_profile.sh ${TERMINAL_PROFILE_NAME} 
+
+# Apply gnome-terminal theme in the fresh new terminal profile
+git clone https://github.com/dracula/gnome-terminal ./gnome-terminal-clone
+cd ./gnome-terminal-clone
+chmod +x ./install.sh
+./install.sh --scheme Dracula --profile ${TERMINAL_PROFILE_NAME} --skip-dircolors
+rm -rf ./gnome-terminal-clone
 
 # Install stow
 sudo apt update
 sudo apt install stow -y
 
-echo "Installation complete! Please log out and log back in to start using zsh with oh-my-zsh, Powerlevel10k, and the Dracula theme."
+echo "Installation complete!" 
+
